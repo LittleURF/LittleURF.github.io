@@ -294,11 +294,6 @@ body {
     margin-top: 35px;
   }
 
-  .central-section {
-    position: sticky;
-    top: 0;
-    height: 1000px;
-  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -321,8 +316,6 @@ body {
   .upgrade-ascendance-section {
     order: 1;
     flex-basis: 30%;
-    position: sticky;
-    top: 10px;
   }
 
   .central-section {
