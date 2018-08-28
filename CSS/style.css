@@ -20,8 +20,8 @@ time, mark, audio, video {
 }
 
 body {
-  /* height: 100%;
-  min-height: 100vh; */
+  height: 100%;
+  
   padding-bottom: 20px;
   margin: 0;
   background-attachment: fixed;
