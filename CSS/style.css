@@ -28,6 +28,7 @@ body {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   color: rgb(223, 223, 223);
+  border: 1px solid transparent;
 }
 
 .main-wrapper {
@@ -65,7 +66,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 
 }
 
@@ -297,6 +297,7 @@ body {
   .central-section {
     position: sticky;
     top: 0;
+    height: 1011px;
   }
 }
 
@@ -324,6 +325,9 @@ body {
     top: 10px;
   }
 
+  .central-section {
+    height: initial;
+  }
 }
 
 
