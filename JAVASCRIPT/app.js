@@ -20,7 +20,7 @@
 (function(){
 
   
-var pepes =  0;
+var pepes =  1;
 var gpps = 0; // Global pepes per second
 
 
