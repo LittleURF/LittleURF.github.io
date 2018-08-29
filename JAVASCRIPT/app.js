@@ -1,15 +1,13 @@
 /*
 --TO DO
-- Make a small window asking if the user is here just to test, if so give him lots of pepes instantly
- div sticked to a side? with one button saying give me money! and one saying no, - closing the window
+- Compress images
 
 - Think of something for Paula to draw
 - Make upgrades dissapear when player is far away from them(no item,
   earlier upgrade for this item is not yet bought)
 - Add other upgrade types, all items effectivness, click effectivness
-- Add statistics section
+- Add ascendance section
 - Make buildings dissaper if player doesnt have the previous one(?) and money for it(?)
-- Ascendances
 - How to split it into files without creating global variables?
 - If you dont wanna screw with splitting the code, get everything in this here file at the end!
 !!!^
@@ -20,15 +18,17 @@
 (function(){
 
   
-var pepes =  1;
+var pepes =  0;
 var gpps = 0; // Global pepes per second
 
 
-// if(localStorage.getItem("save") !== null){ // If a previous save exists, load it.
-//   console.log('loading');
-//   loadGame();
-// }
-
+if(localStorage.getItem("save") !== null){ // If a previous save exists, load it.
+ console.log('loading');
+ loadGame();
+}
+else {
+  testPepesWindow.style.display = 'initial';
+}
 
 function saveGame(){
   var save = {
@@ -185,6 +185,23 @@ function upgradeItem(upgrade) {
   }
 }
 
+function giveTestMoney() {
+  pepes += 900000000;
+  hideTestMoneyWindow()
+}
+
+function hideTestMoneyWindow(){
+  testPepesWindow.style.display = 'none';
+}
+
+function showTestMoneyWindow(){
+  testPepesWindow.style.display = 'initial';
+}
+var testPepesWindow = document.getElementById('test-pepes');
+document.getElementById('test-pepes-accept').addEventListener('click', giveTestMoney, false);
+document.getElementById('test-pepes-decline').addEventListener('click', hideTestMoneyWindow, false);
+document.getElementById('test-pepes-caller').addEventListener('click', showTestMoneyWindow, false);
+
 var pepeCounterWorker;
 function startOrRestartWorker(){
 
@@ -203,6 +220,6 @@ pepeCounterWorker.postMessage(gpps);
 updateUi();
 startOrRestartWorker();
 
-setInterval(updateCookiesAndGppsUi, 10);
+setInterval(updateCookiesAndGppsUi, 40);
 setInterval(saveGame, 3000);
 })();
