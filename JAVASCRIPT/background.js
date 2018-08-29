@@ -1,14 +1,1 @@
-function worker_function() {
-
-  this.addEventListener('message', function (e) {
-    setInterval(function () {
-      var pepesToAdd = e.data / 25;
-      this.postMessage(pepesToAdd);
-    }, 40);
-    // it actually adds 1 second worth of pepes every second, the timings are weird to make
-    // the counter look cool
-  }, false);
-}
-
-if (window != self)
-  worker_function();
+function worker_function(){this.addEventListener("message",function(n){setInterval(function(){var t=n.data/25;this.postMessage(t)},40)},!1)}window!=self&&worker_function();
